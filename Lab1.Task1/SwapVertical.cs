@@ -7,14 +7,14 @@ class SwapVertical
 {
     static void Main()
     {
-        // Объявление переменных //
+        // Объявление переменных
         int rows = 4;
         int columns = 5;
 
-        // Создание двумерного массив //
+        // Создание двумерного массив
         int[,] array = new int[rows, columns];
 
-        // Введите значения массива //
+        // Введите значения массива
         Console.WriteLine("Введите значения массива:");
         for (int i = 0; i < rows; i++)
             for (int j = 0; j < columns; j++)
@@ -24,11 +24,11 @@ class SwapVertical
             }
 
 
-        // Исходный массив //
+        // Исходный массив
         Console.WriteLine("\nИсходный массив:");
         PrintArray(array);
 
-        // Замена столбцов //
+        // Замена столбцов
         for (int j = 0; j < columns / 2; j++)
             for (int i = 0; i < rows; i++)
             {
@@ -37,28 +37,28 @@ class SwapVertical
                 array[i, columns - 1 - j] = temp;
             }
 
-        // Измененный массив //
+        // Измененный массив
         Console.WriteLine("\nИзмененный массив:");
         PrintArray(array);
     }
 
     /// <summary>
-    /// 
+    /// выводит двумерный массив на консоль
     /// </summary>
-    /// <param name="array"></param>
+    /// <param name="array">массив</param>
 
     static void PrintArray(int[,] array)
     {
-        // Объявление переменных по полученному массиву //
+        // Объявление переменных по полученному массиву
         int rows = array.GetLength(0);
         int columns = array.GetLength(1);
 
-        // Вывод массива ///
+        // Вывод массива
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < columns; j++)
                 Console.Write($"{array[i, j]}\t");
-            Console.WriteLine(); // Переход строки //
+            Console.WriteLine(); // Переход строки
         }
     }
 }
